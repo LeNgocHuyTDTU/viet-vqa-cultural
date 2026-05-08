@@ -158,7 +158,7 @@ class Config:
 - **Train**: 80% (~8,000)
 - **Val**: 10% (~1,000)
 - **Test**: 10% (~1,000)
-- **Danh mục**: 12 categories
+- **Danh mục**: 1 categories
 - **Câu hỏi/ảnh**: 2-5 câu hỏi/ảnh
 
 ### Định Dạng JSON
@@ -202,8 +202,11 @@ class Config:
 
 ### Metrics
 
-- **Classification (B)**: Accuracy, Precision, Recall, F1
-- **Generative (A)**: BLEU, METEOR, CIDEr, SPICE
+- VQA Accuracy (exact match / soft accuracy chuẩn VQA v2).
+- BLEU, ROUGE-L, METEOR cho câu trả lời dài.
+- BERTScore (ngữ nghĩa).
+
+
 
 ### Lệnh Evaluate
 
@@ -238,7 +241,7 @@ GRADIENT_ACCUMULATION_STEPS = 2
 
 - [ViLT Paper](https://arxiv.org/abs/2102.03334)
 - [PEFT (LoRA)](https://github.com/huggingface/peft)
-- [Vietnamese VQA Dataset](https://huggingface.co/Dangindev/viet-cultural-vqa)
+- [Vietnamese VQA Dataset](https://huggingface.co/datasets/Dangindev/viet-cultural-vqa)
 
 ## 📝 Ghi Chú Quan Trọng
 
