@@ -36,6 +36,17 @@ vqa_project/
 │   │   └── vietnamese_cultural_knowledge.json# Cơ sở kiến thức
 │   ├── images/                               # Hình ảnh theo danh mục
 │   │   ├── am_thuc/                         # Ẩm thực
+│   │   ├── doi_song_hang_ngay/              # Đời sống hàng ngày
+│   │   ├── giao_thong/                      # Giao thông
+│   │   ├── kien_truc/                       # Kiến trúc
+│   │   ├── le_hoi/                          # Lễ hội
+│   │   ├── nhac_cu/                         # Nhạc cụ
+│   │   ├── phong_canh/                      # Phong cảnh
+│   │   ├── the_thao_truyen_thong/          # Thể thao truyền thống
+│   │   ├── thu_cong_my_nghe/                # Thủ công mỹ nghệ
+│   │   ├── trang_phuc/                      # Trang phục
+│   │   ├── tro_choi_dan_gian/               # Trò chơi dân gian
+│   │   └── van_hoa_dan_gian/                # Văn hóa dân gian
 │   └── splits/
 │       ├── train_data.json                  # Training split
 │       ├── val_data.json                    # Validation split
@@ -50,6 +61,8 @@ vqa_project/
 │   └── cache/
 │       ├── train_preprocessed.pt           # Cache train data
 │       └── val_preprocessed.pt             # Cache val data
+│
+└── temp/                                    # Thư mục tạm
 ```
 
 ## 🚀 Cài Đặt
@@ -158,7 +171,7 @@ class Config:
 - **Train**: 80% (~8,000)
 - **Val**: 10% (~1,000)
 - **Test**: 10% (~1,000)
-- **Danh mục**: 1 categories
+- **Danh mục**: 12 categories
 - **Câu hỏi/ảnh**: 2-5 câu hỏi/ảnh
 
 ### Định Dạng JSON
@@ -202,11 +215,8 @@ class Config:
 
 ### Metrics
 
-- VQA Accuracy (exact match / soft accuracy chuẩn VQA v2).
-- BLEU, ROUGE-L, METEOR cho câu trả lời dài.
-- BERTScore (ngữ nghĩa).
-
-
+- **Classification (B)**: Accuracy, Precision, Recall, F1
+- **Generative (A)**: BLEU, METEOR, CIDEr, SPICE
 
 ### Lệnh Evaluate
 
@@ -241,7 +251,7 @@ GRADIENT_ACCUMULATION_STEPS = 2
 
 - [ViLT Paper](https://arxiv.org/abs/2102.03334)
 - [PEFT (LoRA)](https://github.com/huggingface/peft)
-- [Vietnamese VQA Dataset](https://huggingface.co/datasets/Dangindev/viet-cultural-vqa)
+- [Vietnamese VQA Dataset](https://huggingface.co/Dangindev/viet-cultural-vqa)
 
 ## 📝 Ghi Chú Quan Trọng
 
@@ -255,3 +265,10 @@ GRADIENT_ACCUMULATION_STEPS = 2
    - Chọn **Hướng A** nếu cần câu trả lời chi tiết, phức tạp
    - Chọn **Hướng B** nếu cần độ chính xác cao, answer ngắn
 
+## 👤 Tác Giả
+
+TDTU - K27 - Deep Learning Project
+
+## 📄 License
+
+MIT License
